@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_deck/flutter_deck.dart';
-import 'package:meetup_talk_25_01_30/config/deck_theme.dart';
+import 'package:meetup_talk_25_01_30/config/config.dart';
 
 final flutterDeckConfig = FlutterDeckConfiguration(
-  background: const FlutterDeckBackgroundConfiguration(
-    light: lightGradientBackground,
-    dark: lightGradientBackground,
+  background: FlutterDeckBackgroundConfiguration(
+    light: FlutterDeckBackground.gradient(BackgroundGradients.nightsky),
+    dark:  FlutterDeckBackground.gradient(BackgroundGradients.mountainDescend),
   ),
   controls: const FlutterDeckControlsConfiguration(
     presenterToolbarVisible: true,

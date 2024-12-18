@@ -5,9 +5,12 @@
 *.swp
 .DS_Store
 .atom/
+.build/
 .buildlog/
 .history
 .svn/
+.swiftpm/
+.vscode/settings.json
 migrate_working_dir/
 
 # IntelliJ related
