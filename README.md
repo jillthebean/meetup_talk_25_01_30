@@ -19,6 +19,8 @@ My talk for the Flutter Offenburg meetup
 - Back to real life use cases
     - Pros and Cons depending on situation
 
+Branding:
+- https://zeroheight.com/7164c8587/p/44d6f7-introduction
 
 Ressources:
 - Quill https://quilljs.com/
