@@ -2,25 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 const agenda = [
-  '1. Rich Text History',
-  '2. Definition of rich text',
-  '3. Rich Text in Flutter',
-  '4. Rich Text Editing in Flutter',
-  '5. Rich Text Formats',
-  '6. Conclusion',
+  '1. Desktop',
+  '2. Mobile',
 ];
 
-class AgendaSlide extends FlutterDeckSlideWidget {
-  const AgendaSlide({
+class AgendaHistory extends FlutterDeckSlideWidget {
+  const AgendaHistory({
     super.key,
   }) : super(
           configuration: const FlutterDeckSlideConfiguration(
-            route: '/agenda',
+            route: '/agenda-history',
             title: 'Agenda',
-            speakerNotes: 'Overview over all chapters',
             header: FlutterDeckHeaderConfiguration(
               showHeader: true,
-              title: 'Agenda',
+              title: 'History of Rich Text',
             ),
           ),
         );

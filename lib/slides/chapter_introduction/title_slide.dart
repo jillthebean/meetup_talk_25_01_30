@@ -21,8 +21,8 @@ class TitleSlide extends FlutterDeckSlideWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterDeckSlide.title(
-      title: 'Welcome to flutter_deck demo! 🚀',
-      subtitle: 'Use slide deck controls to navigate.',
+      title: 'Rich Text Adventures',
+      subtitle: 'An overview over rich text editing',
     );
   }
 }

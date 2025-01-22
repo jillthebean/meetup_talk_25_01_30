@@ -5,21 +5,40 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "meetup_talk_25_01_30",
+            "command": "dart_frog dev -p 8081",
+            "name": "Server",
+            "cwd": "${workspaceFolder}/server",
             "request": "launch",
-            "type": "dart"
+            "type": "node-terminal"
         },
         {
-            "name": "meetup_talk_25_01_30 (profile mode)",
+            "name": "Slides Standalone",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "debug",
         },
         {
-            "name": "meetup_talk_25_01_30 (release mode)",
+            "name": "Slides Presenter",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "program": "lib/main_presenter.dart"
+        },
+        {
+            "name": "Slides Display",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_slides.dart"
+        },
+    ],
+    "compounds": [
+        {
+            "name": "Server/Client",
+            "configurations": [
+                "Server",
+                "Slides Presenter",
+                "Slides Standalone",
+            ],
+            "stopAll": true
         }
     ]
 }

@@ -37,6 +37,10 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_deck: ^0.17.0
   flutter_deck_web_client: ^0.1.2
+  flutter_deck_ws_client: ^0.1.2
+  dart_frog: ^1.2.0
+  dart_frog_web_socket: ^1.0.0
+  broadcast_bloc: ^0.1.0-dev.2
 
 dev_dependencies:
   flutter_test:
