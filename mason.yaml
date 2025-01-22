@@ -1,0 +1,5 @@
+bricks:
+  deckdeck_slide:
+    path: ./bricks/deck_slide
+  deck_slide:
+    path: bricks/deck_slide
