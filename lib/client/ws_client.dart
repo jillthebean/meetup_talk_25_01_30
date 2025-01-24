@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:flutter_deck_ws_client/flutter_deck_ws_client.dart';
+import 'package:meetup_talk_25_01_30/client/controls_overwrite/controls_overwrite.dart';
 import 'package:meetup_talk_25_01_30/config/config.dart';
 import 'package:meetup_talk_25_01_30/flutter_deck_config.dart';
 import 'package:meetup_talk_25_01_30/slides/slides.dart';
@@ -15,9 +16,9 @@ class WsClient extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckApp(
+    return AlwaysVisibleControlsFlutterDeckApp(
       client: FlutterDeckWsClient(
-        uri: Uri.parse('ws://localhost:8080'),
+        uri: Uri.parse('ws://10.51.44.56:8080'),
       ),
       isPresenterView: isPresenterView,
       configuration: flutterDeckConfig,

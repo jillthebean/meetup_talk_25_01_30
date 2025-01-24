@@ -16,6 +16,10 @@ My talk for the Flutter Offenburg meetup
 - Display Rich Text in Flutter
     - Styling of text
     - Styling with TextSpan and RichText
+    - Selectable Text
+    - Shortcuts
+    - Context Menu
+    - Toolbar
 - Editors - WYSIWYG in Flutter on mobil
     - High level overview over simplistic editor from flutter examples
     - Quill.js approach with deltas

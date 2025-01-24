@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "command": "dart_frog dev -p 8081",
+            "command": "dart_frog dev -p 8080",
             "name": "Server",
             "cwd": "${workspaceFolder}/server",
             "request": "launch",

@@ -41,6 +41,8 @@ dependencies:
   dart_frog: ^1.2.0
   dart_frog_web_socket: ^1.0.0
   broadcast_bloc: ^0.1.0-dev.2
+  go_router: ^14.7.1
+  flutter_deck_client: ^0.1.2
 
 dev_dependencies:
   flutter_test:
