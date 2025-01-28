@@ -8,14 +8,14 @@ class TextEditingElementsSlide extends FlutterDeckSlideWidget {
   }) : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/common-features-history',
-            steps: 3,
+            steps: 4,
             speakerNotes:
 '''
 Ignore formats for now, focus on displaying the editing
 Display rich text (What you see is what you get)
-Keyboard Shortcuts
-Toolbars
-Context Menus
+Selection of rich text
+Changing style for new input e.g. via toolbars
+Changing style for selection e.g. via context menu, keyboard shortcuts
 '''
           ),
         );
@@ -26,9 +26,10 @@ Context Menus
       builder: (context) => FlutterDeckBulletList(
         useSteps: true,
         items: const [
-          'Toolbar above text field',
-          'Toolbar above text input on mobile',
-          'Context menu for simple format in messenger',
+          'Live preview / WYSIWYG',
+          'Handle selection of rich text',
+          'Change current style for new input',
+          'Edit style of existing text',
         ],
       ),
     );

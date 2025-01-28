@@ -6,7 +6,7 @@ import 'package:meetup_talk_25_01_30/config/config.dart';
 final flutterDeckConfig = FlutterDeckConfiguration(
   background: FlutterDeckBackgroundConfiguration(
     light: FlutterDeckBackground.gradient(BackgroundGradients.nightsky),
-    dark:  FlutterDeckBackground.gradient(BackgroundGradients.mountainDescend),
+    dark: FlutterDeckBackground.gradient(BackgroundGradients.mountainDescend),
   ),
   controls: const FlutterDeckControlsConfiguration(
     presenterToolbarVisible: true,

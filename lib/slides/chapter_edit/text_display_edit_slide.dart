@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
+
+// Text selection docs https://api.flutter.dev/flutter/widgets/SelectableRegion-class.html
 class TextDisplayEditSlide extends FlutterDeckSlideWidget {
   const TextDisplayEditSlide({
     super.key,
@@ -13,8 +15,12 @@ class TextDisplayEditSlide extends FlutterDeckSlideWidget {
 Starts with simple example of applying text style
 Advances to complex example with rich text
 First Problem: text selection doesn't work out of the box
-- loss of text selection capabilities with more complex text/widgets
-- can be added again for RichText with SelectionArea
+
+Text widget adds an SelectionContainer with _SelectableTextContainerDelegate
+For rich text, we have to implement our own TextSelectionDelegate later!
+
+TextSelectionDelegate used by RenderEditable
+Source: docs for SelectableRegion
 '''),
         );
 
