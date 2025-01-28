@@ -15,9 +15,11 @@ class WordProcessorHistorySlide extends FlutterDeckSlideWidget {
             speakerNotes:
 '''
 Different word processors to show the evolution of increased features
+WYSIWYG (when?)
 Text formatting like alignment, italic, bold, headlines, size, font family
 Later on images, different user experiences, more ways to do the same thinkg
 Controversy of the microsoft word ribbons vs cluttered toolbars
+Keyboard shortcuts for non mobile
 Emphasis on toolbar evolution, mention some formats like HTML, RTF, LaTeX
 '''
           ),

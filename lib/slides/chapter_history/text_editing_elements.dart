@@ -2,16 +2,18 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 // Look at https://en.wikipedia.org/wiki/T9_(predictive_text)
-class CommonTextEditingFeaturesSlide extends FlutterDeckSlideWidget {
-  const CommonTextEditingFeaturesSlide({
+class TextEditingElementsSlide extends FlutterDeckSlideWidget {
+  const TextEditingElementsSlide({
     super.key,
   }) : super(
           configuration: const FlutterDeckSlideConfiguration(
-            route: '/word-processor-history',
+            route: '/common-features-history',
             steps: 3,
             speakerNotes:
 '''
 Ignore formats for now, focus on displaying the editing
+Display rich text (What you see is what you get)
+Keyboard Shortcuts
 Toolbars
 Context Menus
 '''
