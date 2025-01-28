@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-const agenda = [
-  '1. Desktop',
-  '2. Mobile',
-];
 
 class AgendaHistory extends FlutterDeckSlideWidget {
   const AgendaHistory({
@@ -12,7 +8,7 @@ class AgendaHistory extends FlutterDeckSlideWidget {
   }) : super(
           configuration: const FlutterDeckSlideConfiguration(
             route: '/agenda-history',
-            title: 'Agenda',
+            title: 'History of Rich Text',
             header: FlutterDeckHeaderConfiguration(
               showHeader: true,
               title: 'History of Rich Text',
@@ -22,14 +18,14 @@ class AgendaHistory extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return FlutterDeckSlide.blank(
-      builder: (context) => Column(
-        children: agenda
-            .map((text) => ListTile(
-                  title: Text(text, style: theme.textTheme.displayMedium),
-                ))
-            .toList(),
+      builder: (context) => FlutterDeckBulletList(
+        useSteps: true,
+        items: const [
+          'Evolution of word processors',
+          'Rich text mobile',
+          'Common functionality of rich text editing'
+        ],
       ),
     );
   }
