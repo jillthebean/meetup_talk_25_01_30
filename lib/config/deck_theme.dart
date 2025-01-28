@@ -13,3 +13,10 @@ FlutterDeckThemeData createSevDeskDeckThemeData() {
   final theme = FlutterDeckThemeData.fromTheme(materialTheme);
   return theme;
 }
+
+FlutterDeckCodeHighlightThemeData createCodeHighlightTheme(
+    FlutterDeckThemeData theme) {
+  return FlutterDeckCodeHighlightThemeData(
+    textStyle: theme.textTheme.bodySmall,
+  );
+}
