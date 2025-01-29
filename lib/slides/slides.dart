@@ -8,8 +8,7 @@ import 'package:meetup_talk_25_01_30/slides/chapter_introduction/chapter_introdu
 final slides = [
   ...chapterIntroduction,
   ...chapterHistory,
-  ...chapterDefinition,
   ...chapterEdit,
-  ...chapterFormats,
+  ...chapterFlutterEditors,
   ...chapterConclusion,
 ];
