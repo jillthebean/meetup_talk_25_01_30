@@ -9,10 +9,18 @@ class ShortcutActivatorSlide extends FlutterDeckSlideWidget {
             route: '/edit-shortcuts-activator',
             title: 'ShortcutActivator',
             speakerNotes: '''
-SingleActivator - LogicalKey + Modifiers
-CharacterActivator - like ? or £, not represented on logical keyboard
+ShortcutActivator actually has two implementers.
+`SingleActivator` - not to be confused with your favorite dating app -
+takes a logical key combined with modifiers
+`CharacterActivator` meanwhile takes a character with some modifiers.
+The last shines for characters, that or on different keys depending on
+the keyboard layout. E.g. <C>-Z for undo always points to the key with
+the Z on it, even though the Z key can be in different locations for
+QWERTY and QWERTZ keyboards, for a character like ? which is activated via
+modifier on different keys depending on the layout, it becomes more
+complicated.
 
-Explain modifiers:
+Okay, so we have a shortcut defined, let's write an intent!
 ''',
           ),
         );

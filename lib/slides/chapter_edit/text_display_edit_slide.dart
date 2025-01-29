@@ -33,10 +33,15 @@ And here we can finally integrate the `TextSpan` from earlier.
 Let's create our own `TextEditingController` and override the
 `buildTextSpan` method.
 
+Easy enough! We don't have any logic in place yet to support
+setting the bold option on specific text ranges as we hard coded it
+For now, this shall suffice and we will first add the an other
+functionality: inserting filler text!
+To make it a little bit more fun, let's grab some dad jokes as filler text
+I hope I don't regret that as I didn't check the API for a NSFW flag
+So let us look into shortcuts
+''';
 
-'''; // TODO(jillthebean): continue here with transition to next slide
-
-// Text selection docs https://api.flutter.dev/flutter/widgets/SelectableRegion-class.html
 class TextDisplayEditSlide extends FlutterDeckSlideWidget {
   const TextDisplayEditSlide({
     super.key,

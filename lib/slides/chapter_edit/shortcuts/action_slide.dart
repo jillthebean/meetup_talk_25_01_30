@@ -1,17 +1,19 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-class ActionSlide extends FlutterDeckSlideWidget {
-  const ActionSlide({
-    super.key,
-  }) : super(
-          configuration: const FlutterDeckSlideConfiguration(
-              route: '/edit-shortcuts-action',
-              title: 'Actions',
-              steps: 2,
-              speakerNotes: '''
+const _speakerNotes = '''
+So far, we defined the Shortcut and Intent
+The `Actions` widget is responsible to find matching actions for
+intents. Therefore we have to declare a proper action to
+handle this `Intent`
 
-Why is there a difference Action <-> Intent?
+`Action`s extends the `Action` class and get the matching `Intent`
+as type parameter and the invoke method will be called with the
+actual `Intent`.
+So we can include our logic for manipulating the text in here.
+
+
+But why is there a difference Action <-> Intent?
 1. ShortucsWidget can declare intents whithout knowing about the action
 --> Easier separation between Shortcuts and Actions
 --> Actions with models don't need to be propagated to Shortcuts
@@ -26,22 +28,31 @@ Easier workaround with CallbackShortcuts --> unifies Shortcuts with actions by d
 bindings of type <ShortcutActivator, VoidCallback>
 
 Not touched: ShortcutManager
-'''),
+''';
+
+class ActionSlide extends FlutterDeckSlideWidget {
+  const ActionSlide({
+    super.key,
+  }) : super(
+          configuration: const FlutterDeckSlideConfiguration(
+              route: '/edit-shortcuts-action',
+              title: 'Actions',
+              steps: 2,
+              speakerNotes: _speakerNotes),
         );
 
   @override
   Widget build(BuildContext context) {
     return FlutterDeckSlide.blank(
-      builder: (context) => FlutterDeckSlideStepsBuilder(
-        builder: (context, step) {
-          return FlutterDeckCodeHighlight(
-            code: switch (step) {
-              1 => _example1,
-              _ => _example2,
-            },
-          );
-        }
-      ),
+      builder: (context) =>
+          FlutterDeckSlideStepsBuilder(builder: (context, step) {
+        return FlutterDeckCodeHighlight(
+          code: switch (step) {
+            1 => _example1,
+            _ => _example2,
+          },
+        );
+      }),
     );
   }
 }
