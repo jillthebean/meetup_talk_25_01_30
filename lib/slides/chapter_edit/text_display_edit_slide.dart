@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
-
 // Text selection docs https://api.flutter.dev/flutter/widgets/SelectableRegion-class.html
 class TextDisplayEditSlide extends FlutterDeckSlideWidget {
   const TextDisplayEditSlide({
@@ -72,24 +71,24 @@ Source: docs for SelectableRegion
           children: [
             Text(
               'Hello ',
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: FlutterDeckTheme.of(context).textTheme.bodyLarge,
             ),
             Text(
               'bold ',
-              style: Theme.of(context)
+              style: FlutterDeckTheme.of(context)
                   .textTheme
                   .bodyLarge
-                  ?.copyWith(fontWeight: FontWeight.bold),
+                  .copyWith(fontWeight: FontWeight.bold),
             ),
             Text(
               'italic ',
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+              style: FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
                     fontStyle: FontStyle.italic,
                   ),
             ),
             Text(
               'World',
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+              style: FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
                     decoration: TextDecoration.underline,
                   ),
             ),
@@ -134,26 +133,28 @@ Source: docs for SelectableRegion
         child: Text.rich(
           TextSpan(
             text: 'Hello ',
-            style: Theme.of(context).textTheme.bodyLarge,
+            style: FlutterDeckTheme.of(context).textTheme.bodyLarge,
             children: <TextSpan>[
               TextSpan(
                 text: 'bold ',
-                style: Theme.of(context)
+                style: FlutterDeckTheme.of(context)
                     .textTheme
                     .bodyLarge
-                    ?.copyWith(fontWeight: FontWeight.bold),
+                    .copyWith(fontWeight: FontWeight.bold),
               ),
               TextSpan(
                 text: 'italic ',
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      fontStyle: FontStyle.italic,
-                    ),
+                style:
+                    FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
+                          fontStyle: FontStyle.italic,
+                        ),
               ),
               TextSpan(
                 text: 'World',
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      decoration: TextDecoration.underline,
-                    ),
+                style:
+                    FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
+                          decoration: TextDecoration.underline,
+                        ),
               ),
             ],
           ),
@@ -200,26 +201,28 @@ Source: docs for SelectableRegion
           child: Text.rich(
             TextSpan(
               text: 'Hello ',
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: FlutterDeckTheme.of(context).textTheme.bodyLarge,
               children: <TextSpan>[
                 TextSpan(
                   text: 'bold ',
-                  style: Theme.of(context)
+                  style: FlutterDeckTheme.of(context)
                       .textTheme
                       .bodyLarge
-                      ?.copyWith(fontWeight: FontWeight.bold),
+                      .copyWith(fontWeight: FontWeight.bold),
                 ),
                 TextSpan(
                   text: 'italic ',
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        fontStyle: FontStyle.italic,
-                      ),
+                  style:
+                      FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
+                            fontStyle: FontStyle.italic,
+                          ),
                 ),
                 TextSpan(
                   text: 'World',
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        decoration: TextDecoration.underline,
-                      ),
+                  style:
+                      FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
+                            decoration: TextDecoration.underline,
+                          ),
                 ),
               ],
             ),

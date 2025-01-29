@@ -2,15 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 
 const _speakerNotes = '''
-- Overview over all chapters
+To outline some features of rich text editing, we will look at some
+examples from well known software and isolate a few things that are
+relevant to editing more than a text string, but an enhanced version
+of it with more formatting, alignment, and additional features.
+
+
 ''';
 
 const agenda = [
-  '1. Goal of this talk',
-  '2. What is rich text', // a.k.a. history
-  '3. Rich Text in Flutter with Code Examples',
-  '4. Rich Text Formats',
-  '5. Conclusion',
+  'What is rich text', // a.k.a. history
+  'Rich Text with Widgets',
+  'Existing packages',
+  'Conclusion',
 ];
 
 class AgendaSlide extends FlutterDeckSlideWidget {
@@ -30,12 +34,12 @@ class AgendaSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
+    final theme = FlutterDeckTheme.of(context);
     return FlutterDeckSlide.blank(
       builder: (context) => Column(
         children: agenda
             .map((text) => ListTile(
-                  title: Text(text, style: theme.textTheme.displayMedium),
+                  title: Text(text, style: theme.textTheme.bodyMedium),
                 ))
             .toList(),
       ),

@@ -5,8 +5,8 @@ import 'package:meetup_talk_25_01_30/slides/chapter_history/text_editing_element
 import 'package:meetup_talk_25_01_30/slides/chapter_history/word_processor_history_slide.dart';
 
 final List<Widget> chapterHistory = [
-  const AgendaHistory(),
-  const WordProcessorHistorySlide(),
+  // const AgendaHistory(),
+  WordProcessorHistorySlide(),
   const MobileTextEditingSlide(),
   const TextEditingElementsSlide(),
 ];
