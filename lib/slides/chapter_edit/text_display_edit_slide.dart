@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:meetup_talk_25_01_30/text_input_examples/text_editing_controller.dart';
 
 const _speakerNotes = '''
 So let's style a simple text element.
@@ -33,7 +34,7 @@ Let's create our own `TextEditingController` and override the
 `buildTextSpan` method.
 
 
-''';
+'''; // TODO(jillthebean): continue here with transition to next slide
 
 // Text selection docs https://api.flutter.dev/flutter/widgets/SelectableRegion-class.html
 class TextDisplayEditSlide extends FlutterDeckSlideWidget {
@@ -221,39 +222,7 @@ class TextDisplayEditSlide extends FlutterDeckSlideWidget {
             ),
           );''',
       ),
-      rightBuilder: (context) => Center(
-        child: SelectionArea(
-          child: Text.rich(
-            TextSpan(
-              text: 'Hello ',
-              style: FlutterDeckTheme.of(context).textTheme.bodyLarge,
-              children: <TextSpan>[
-                TextSpan(
-                  text: 'bold ',
-                  style: FlutterDeckTheme.of(context)
-                      .textTheme
-                      .bodyLarge
-                      .copyWith(fontWeight: FontWeight.bold),
-                ),
-                TextSpan(
-                  text: 'italic ',
-                  style:
-                      FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
-                            fontStyle: FontStyle.italic,
-                          ),
-                ),
-                TextSpan(
-                  text: 'World',
-                  style:
-                      FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
-                            decoration: TextDecoration.underline,
-                          ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      rightBuilder: (context) => const Center(child: CustomTextInput()),
     );
   }
 }
