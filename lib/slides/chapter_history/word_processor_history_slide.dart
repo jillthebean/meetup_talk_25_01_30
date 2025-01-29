@@ -5,37 +5,54 @@ import 'package:meetup_talk_25_01_30/gen/assets.gen.dart';
 const _speakerNotes = '''
 Text editing is already a very old topic - we won't even touch on
 fonts here - but let's look at the some early iterations on text
-editing with graphical user interfaces.
+editing interfaces.
 
+1976 VI release
 
+We can see the introduction with basic text user interfaces at the
+start. These predate myself, but I think this is the reason why
+we have "how to quit vim" memes today
 1983 - Microsoft Word: https://en.wikipedia.org/wiki/Microsoft_Word
+
+Also LaTeX needs a proper mention here, as it was conceived inn 1984
+one year after the first release of microsoft word
 1984 - Latex introduced itself https://en.wikipedia.org/wiki/LaTeX
+
+One of the alternative to microsoft back then was 1st Word in 1985
+as well as StarOffice - which was later aquired by Sun Microsystems
+who then released it as OpenOffice with source code available
 1985 - 1stWord: https://en.wikipedia.org/wiki/1st_Word
-1987 - Microsoft Word 3: https://winworldpc.com/product/microsoft-word/3x-mac
+
+With microsft word 3, we start to see modern text editing interfaces
+with WYSIWYG - What You See Is What You Get.
+In the same year, microsoft published the RTF spec in version 1.0
+In comparison, HTML would only be released several years later
+1987 - Microsoft Word 3 (Mac Version): https://winworldpc.com/product/microsoft-word/3x-mac
 1987 - RTF 1.0 released https://en.wikipedia.org/wiki/Rich_Text_Format
+
+To get up to date, let's look at the 2000s with OpenOffice, WordPad and
+the Microsoft Word in 2007 introducing "Ribbon" as a new take on toolbars
 1995 - Wordpad released
 2002 - OpenOffice first release https://de.wikipedia.org/wiki/Apache_OpenOffice
 2004 - Screenshot of wordpad https://en.wikipedia.org/wiki/WordPad
 2007 - Plain toolbar reframed as ribbons by microsoft office 2007
 Ribbon https://en.wikipedia.org/wiki/Ribbon_(computing)
 
+While we looked exclusively on the desktop side, here is a quick peek
+at the web side of things. In 2006 Google Docs was released. 
+
 Web:
 2006 - Google Docs
 2016 - Notion release
+2021 - AppFlowy was released written in Flutter
 
-
+We are here at a flutter talk, so let's round it up by looking also at
+mobile platforms to round up the full support of what flutter offers us
 
 // Look at https://en.wikipedia.org/wiki/Word_processor
 // https://en.wikipedia.org/wiki/Rich_Text_Format
 // presentational markup https://en.wikipedia.org/wiki/Markup_language
 // Ribbon https://en.wikipedia.org/wiki/Ribbon_(computing)
-
-WYSIWYG started to establish itself pretty soon
-Text formatting like alignment, italic, bold, headlines, size, font family
-Later on images, different user experiences, more ways to do the same thinkg
-Controversy of the microsoft word ribbons vs cluttered toolbars
-Keyboard shortcuts for non mobile
-Emphasis on toolbar evolution, mention some formats like HTML, RTF, LaTeX
 ''';
 
 final _images = [

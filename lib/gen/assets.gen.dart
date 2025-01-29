@@ -58,11 +58,34 @@ class $AssetsExamplesGen {
       ];
 }
 
+class $AssetsMobileGen {
+  const $AssetsMobileGen();
+
+  /// File path: assets/mobile/github-mobile.png
+  AssetGenImage get githubMobile =>
+      const AssetGenImage('assets/mobile/github-mobile.png');
+
+  /// File path: assets/mobile/swipe.png
+  AssetGenImage get swipe => const AssetGenImage('assets/mobile/swipe.png');
+
+  /// File path: assets/mobile/t9.png
+  AssetGenImage get t9 => const AssetGenImage('assets/mobile/t9.png');
+
+  /// File path: assets/mobile/threema_formatting.png
+  AssetGenImage get threemaFormatting =>
+      const AssetGenImage('assets/mobile/threema_formatting.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values =>
+      [githubMobile, swipe, t9, threemaFormatting];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsExamplesGen examples = $AssetsExamplesGen();
   static const AssetGenImage me = AssetGenImage('assets/me.png');
+  static const $AssetsMobileGen mobile = $AssetsMobileGen();
 
   /// List of all assets
   static List<AssetGenImage> get values => [me];

@@ -70,6 +70,7 @@ flutter:
   assets:
     - assets/me.png
     - assets/examples/
+    - assets/mobile/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
