@@ -56,7 +56,6 @@ Widget build(BuildContext context) {
       const SingleActivator(LogicalKeyboardKey.keyL, control: true):
           InsertFillerIntent(
         filler: getFillerText(),
-        cause: SelectionChangedCause.keyboard,
       ),
     },
     child: Actions(

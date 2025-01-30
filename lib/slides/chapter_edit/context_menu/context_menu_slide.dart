@@ -27,16 +27,16 @@ class ContextMenuSlide extends FlutterDeckSlideWidget {
       builder: (context, step) => CodeHighlighter.buildSplitSlide(
         code: _allExamples[step - 1],
         builder: (context) =>
-            buildRunningExample(context, step == _allExamples.length + 1),
+            buildRunningExample(context, step == _allExamples.length),
       ),
     );
   }
 
   Widget buildRunningExample(BuildContext context, bool addContextMenu) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
+    return const Padding(
+      padding: EdgeInsets.all(16.0),
       child: FullExample(
-        contextMenuBuilder: addContextMenu ? contextMenuBuilder : null,
+        contextMenuBuilder: contextMenuBuilder,
       ),
     );
   }

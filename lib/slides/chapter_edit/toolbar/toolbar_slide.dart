@@ -35,6 +35,7 @@ class ToolbarSlide extends FlutterDeckSlideWidget {
       padding: const EdgeInsets.all(16.0),
       child: FullExample(
         includeToolbar: showToolbar,
+        contextMenuBuilder:  contextMenuBuilder,
       ),
     );
   }
@@ -54,7 +55,6 @@ ContextMenuButtonItem(
       editableTextState.context,
       InsertFillerIntent(
         filler: getFillerText(),
-        cause: SelectionChangedCause.toolbar,
       ),
     );
   },
@@ -68,7 +68,6 @@ ElevatedButton(
     context,
     InsertFillerIntent(
       filler: getFillerText(),
-      cause: SelectionChangedCause.toolbar,
     ),
   ),
   child: const Text('Insert filler'),

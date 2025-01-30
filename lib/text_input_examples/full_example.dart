@@ -3,8 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_deck/flutter_deck.dart';
-import 'package:meetup_talk_25_01_30/text_input_examples/filler_text_provider.dart';
-import 'package:meetup_talk_25_01_30/text_input_examples/intents.dart';
 import 'package:meetup_talk_25_01_30/text_input_examples/text_input_examples.dart';
 
 typedef ContextMenuBuilder = Widget Function(
