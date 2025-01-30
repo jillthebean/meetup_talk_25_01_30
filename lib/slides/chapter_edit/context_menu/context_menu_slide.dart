@@ -97,7 +97,7 @@ final fillerButton = ContextMenuButtonItem(
   onPressed: () {
     // close context menu
     ContextMenuController.removeAny();
-    Actions.handler(
+    Actions.invoke(
       editableTextState.context,
       InsertFillerIntent(
         filler: getFillerText(),

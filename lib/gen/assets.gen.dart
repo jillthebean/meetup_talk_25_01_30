@@ -102,9 +102,10 @@ class Assets {
   static const $AssetsFallbackGen fallback = $AssetsFallbackGen();
   static const AssetGenImage me = AssetGenImage('assets/me.png');
   static const $AssetsMobileGen mobile = $AssetsMobileGen();
+  static const AssetGenImage qrCode = AssetGenImage('assets/qr_code.png');
 
   /// List of all assets
-  static List<AssetGenImage> get values => [me];
+  static List<AssetGenImage> get values => [me, qrCode];
 }
 
 class AssetGenImage {
