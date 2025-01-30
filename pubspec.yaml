@@ -50,6 +50,8 @@ dependencies:
       url: https://github.com/superlistapp/super_editor.git
       path: super_editor
   syntax_highlight: ^0.4.0
+  flutter_markdown: ^0.7.5
+  markdown_editor_plus: ^0.2.15
 
 dev_dependencies:
   flutter_test:
