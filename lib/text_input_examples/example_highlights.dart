@@ -17,7 +17,7 @@ class CodeHighlighter {
     }
   }
 
-  static Widget highlight(String code) {
+  static Widget highlight(String code, [TextStyle? style]) {
     if (_highlighter == null) {
       return const Placeholder();
     }
@@ -29,6 +29,7 @@ class CodeHighlighter {
           child: SingleChildScrollView(
             child: Text.rich(
               _highlighter!.highlight(code),
+              style: style,
             ),
           ),
         ),
@@ -42,7 +43,9 @@ class CodeHighlighter {
   }) {
     return FlutterDeckSlide.split(
       leftBuilder: builder,
-      rightBuilder: (context) => CodeHighlighter.highlight(code),
+      rightBuilder: (context) {
+        final textTheme = FlutterDeckTheme.of(context).textTheme;
+        return CodeHighlighter.highlight(code, textTheme.bodyLarge);},
     );
   }
 }
