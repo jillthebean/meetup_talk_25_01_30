@@ -7,5 +7,5 @@ final List<Widget> chapterHistory = [
   // const AgendaHistory(),
   WordProcessorHistorySlide(),
   MobileTextEditingSlide(),
-  const TextEditingElementsSlide(),
+  TextEditingElementsSlide(),
 ];

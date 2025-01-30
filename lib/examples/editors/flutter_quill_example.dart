@@ -14,8 +14,8 @@ class _FlutterQuillExampleState extends State<FlutterQuillExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Column(
+    return Expanded(
+        child: Column(
       children: [
         QuillSimpleToolbar(
           controller: _controller,

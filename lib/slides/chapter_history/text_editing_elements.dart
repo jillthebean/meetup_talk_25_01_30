@@ -36,14 +36,27 @@ via context menu and toolbar - all without leaving widgets in Flutter.
 To get started, let's look at how to style text in flutter.
 ''';
 
+const _features = [
+  'listening on keyboard input from the platform/os',
+  'rendering the text in specified font and style',
+  'rendering the caret',
+  'rendering text selection handles',
+  'providing a context menu',
+];
+
 // Look at https://en.wikipedia.org/wiki/T9_(predictive_text)
 class TextEditingElementsSlide extends FlutterDeckSlideWidget {
-  const TextEditingElementsSlide({
+  TextEditingElementsSlide({
     super.key,
   }) : super(
-          configuration: const FlutterDeckSlideConfiguration(
+          configuration: FlutterDeckSlideConfiguration(
               route: '/common-features-history',
-              steps: 4,
+              title: 'Common Text Editor features',
+              header: const FlutterDeckHeaderConfiguration(
+                showHeader: true,
+                title: 'Common Text Editor features',
+              ),
+              steps: _features.length + 1,
               speakerNotes: _speakerNotes),
         );
 
@@ -51,6 +64,7 @@ class TextEditingElementsSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlide.blank(
       builder: (context) => FlutterDeckBulletList(
+        stepOffset: 1,
         useSteps: true,
         items: const [
           'Live preview / WYSIWYG',

@@ -30,8 +30,8 @@ class _SuperEditorExampleState extends State<SuperEditorExample> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
+    return Expanded(
+      child: SafeArea(
         child: SuperEditor(
           editor: _docEditor,
           gestureMode: DocumentGestureMode.mouse,

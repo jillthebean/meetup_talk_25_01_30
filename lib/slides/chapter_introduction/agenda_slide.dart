@@ -34,12 +34,12 @@ class AgendaSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = FlutterDeckTheme.of(context);
+    final textTheme = FlutterDeckTheme.of(context).textTheme;
     return FlutterDeckSlide.blank(
       builder: (context) => Column(
         children: agenda
             .map((text) => ListTile(
-                  title: Text(text, style: theme.textTheme.bodyMedium),
+                  title: Text("- $text", style: textTheme.title),
                 ))
             .toList(),
       ),

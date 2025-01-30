@@ -10,7 +10,12 @@ FlutterDeckThemeData createSevDeskDeckThemeData() {
       onSurface: PrimaryColors.vibrantRed,
     ),
   );
-  final theme = FlutterDeckThemeData.fromTheme(materialTheme);
+  var theme = FlutterDeckThemeData.fromTheme(materialTheme);
+  theme = theme.copyWith(
+    splitSlideTheme: theme.splitSlideTheme.copyWith(
+      leftBackgroundColor: SecondaryColors.lavender,
+    ),
+  );
   return theme;
 }
 

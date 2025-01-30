@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:meetup_talk_25_01_30/text_input_examples/text_input_examples.dart';
 
 const _speakerNotes = '''
 Convienently, there is actually a `Shortcuts` widget!
@@ -22,33 +23,30 @@ class ShortcutsSlide extends FlutterDeckSlideWidget {
           configuration: const FlutterDeckSlideConfiguration(
             route: '/edit-shortcuts-widget',
             title: 'Shortcuts',
-            steps: 2,
             speakerNotes: _speakerNotes,
           ),
         );
 
   @override
   Widget build(BuildContext context) {
-    return FlutterDeckSlideStepsBuilder(
-        builder: (context, step) => switch (step) {
-              1 => _shortcutsWidget(context),
-              2 => _shortcutsCode(context),
-              _ => const Placeholder()
-            });
-  }
-
-  Widget _shortcutsWidget(BuildContext context) {
-    return FlutterDeckSlide.bigFact(
-      title: 'Shortcuts',
-      subtitle:
-          'This widget establishes a ShortcutManager to be used by its descendants when invoking an Action via a keyboard key combination that maps to an Intent.',
+    return CodeHighlighter.buildSplitSlide(
+      code: _codeExample1,
+      builder: _shortcutsWidget,
     );
   }
 
-  Widget _shortcutsCode(BuildContext context) {
-    return FlutterDeckSlide.blank(
-        builder: (context) => FlutterDeckCodeHighlight(
-              code: '''
+  Widget _shortcutsWidget(BuildContext context) {
+    final textTheme = FlutterDeckTheme.of(context).textTheme;
+    return Center(
+      child: Text(
+        'This widget establishes a ShortcutManager to be used by its descendants when invoking an Action via a keyboard key combination that maps to an Intent.',
+        style: textTheme.bodyLarge,
+      ),
+    );
+  }
+}
+
+const _codeExample1 = '''
 Shortcuts(
   shortcuts: <ShortcutActivator, Intent>{ ... },
   child: Actions(
@@ -56,7 +54,4 @@ Shortcuts(
     child: ...
   )
 )
-''',
-            ));
-  }
-}
+''';

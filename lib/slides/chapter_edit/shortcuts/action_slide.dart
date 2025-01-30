@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:meetup_talk_25_01_30/text_input_examples/example_highlights.dart';
 
 const _speakerNotes = '''
 So far, we defined the Shortcut and Intent
@@ -46,11 +47,13 @@ class ActionSlide extends FlutterDeckSlideWidget {
     return FlutterDeckSlide.blank(
       builder: (context) =>
           FlutterDeckSlideStepsBuilder(builder: (context, step) {
-        return FlutterDeckCodeHighlight(
-          code: switch (step) {
-            1 => _example1,
-            _ => _example2,
-          },
+        final textTheme = FlutterDeckTheme.of(context).textTheme;
+        return CodeHighlighter.highlight(
+            switch (step) {
+              1 => _example1,
+              _ => _example2,
+            },
+            textTheme.bodyLarge,
         );
       }),
     );
@@ -80,16 +83,7 @@ class InsertFillerAction extends Action<InsertFillerIntent> {
   void invoke(InsertFillerIntent intent) {
     final fillerRange = _controller.value.selection;
     final String replacementText = intent.filler;
-
-    if (!fillerRange.isValid) return;
-
-    // After the filler insertions, we want to palce the curser after
-    // the filled in content
-    final int lastSelectionIndex = max(
-      fillerRange.baseOffset,
-      fillerRange.baseOffset + replacementText.length,
-    );
-
+    // ...
     _controller.value = TextEditingDeltaReplacement(
       oldText: _controller.value.text,
       replacedRange: fillerRange,

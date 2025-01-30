@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:meetup_talk_25_01_30/text_input_examples/example_highlights.dart';
 
 const _speakerNotes = '''
 The intent will be triggered by the shortcut.
@@ -52,15 +53,19 @@ class IntentSlide extends FlutterDeckSlideWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = FlutterDeckTheme.of(context).textTheme;
     return FlutterDeckSlide.blank(
-      builder: (context) => const FlutterDeckCodeHighlight(code: '''
+      builder: (context) => CodeHighlighter.highlight(
+        '''
 class InsertFillerIntent extends Intent {
   const InsertFillerIntent({
     required this.filler,
   });
   final String filler;
 }
-'''),
+''',
+        textTheme.bodyLarge,
+      ),
     );
   }
 }
