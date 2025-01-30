@@ -24,15 +24,18 @@ class ToolbarSlide extends FlutterDeckSlideWidget {
     return FlutterDeckSlideStepsBuilder(
       builder: (context, step) => CodeHighlighter.buildSplitSlide(
         code: _allExamples[step - 1],
-        builder: buildRunningExample,
+        builder: (context) =>
+            buildRunningExample(context, step >= _allExamples.length),
       ),
     );
   }
 
-  Widget buildRunningExample(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16.0),
-      child: FullExample(),
+  Widget buildRunningExample(BuildContext context, bool showToolbar) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: FullExample(
+        includeToolbar: showToolbar,
+      ),
     );
   }
 }
@@ -43,26 +46,31 @@ final _allExamples = [
 ];
 
 const _codeExample1 = '''
-_controller = CustomTextEditingController(text: widget.initialText);
-actions = <Type, Action<Intent>>{
-  InsertFillerIntent: InsertFillerAction(_controller),
-};
+ContextMenuButtonItem(
+  onPressed: () {
+    // close context menu
+    ContextMenuController.removeAny();
+    Actions.handler(
+      editableTextState.context,
+      InsertFillerIntent(
+        filler: getFillerText(),
+        cause: SelectionChangedCause.toolbar,
+      ),
+    );
+  },
+  label: 'Insert filler text',
+)
 ''';
 
 const _codeExample2 = '''
-Widget build(BuildContext context) {
-  return Shortcuts(
-    shortcuts: <ShortcutActivator, Intent>{
-      const SingleActivator(LogicalKeyboardKey.keyL, control: true):
-          InsertFillerIntent(
-        filler: getFillerText(),
-        cause: SelectionChangedCause.keyboard,
-      ),
-    },
-    child: Actions(
-      actions: actions,
-      child: buildTextField(context),
+ElevatedButton(
+  onPressed: () => Actions.invoke(
+    context,
+    InsertFillerIntent(
+      filler: getFillerText(),
+      cause: SelectionChangedCause.toolbar,
     ),
-  );
-}
+  ),
+  child: const Text('Insert filler'),
+)
 ''';

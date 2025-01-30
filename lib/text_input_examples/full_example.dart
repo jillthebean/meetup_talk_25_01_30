@@ -69,10 +69,18 @@ class _FullExampleState extends State<FullExample> {
       maxLines: null,
       minLines: null,
       controller: _controller,
-      style: FlutterDeckTheme.of(context).textTheme.bodyLarge,
       contextMenuBuilder: widget.contextMenuBuilder,
+      style: FlutterDeckTheme.of(context).textTheme.bodyLarge,
     );
-    return textField;
+    if (!widget.includeToolbar) {
+      return textField;
+    }
+    return Column(
+      children: [
+        const FillerToolbar(),
+        Expanded(child: textField),
+      ],
+    );
   }
 }
 
