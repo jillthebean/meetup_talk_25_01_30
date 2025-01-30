@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deck/flutter_deck.dart';
+import 'package:meetup_talk_25_01_30/config/colors.dart';
 import 'package:syntax_highlight/syntax_highlight.dart';
 
 class CodeHighlighter {
@@ -19,8 +21,28 @@ class CodeHighlighter {
     if (_highlighter == null) {
       return const Placeholder();
     }
-    return Scaffold(
-        body: SingleChildScrollView(
-            child: Text.rich(_highlighter!.highlight(code))));
+    return Center(
+      child: DecoratedBox(
+        decoration: BoxDecoration(color: PrimaryColors.deepBlue),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView(
+            child: Text.rich(
+              _highlighter!.highlight(code),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  static Widget buildSplitSlide({
+    required String code,
+    required Widget Function(BuildContext) builder,
+  }) {
+    return FlutterDeckSlide.split(
+      leftBuilder: builder,
+      rightBuilder: (context) => CodeHighlighter.highlight(code),
+    );
   }
 }

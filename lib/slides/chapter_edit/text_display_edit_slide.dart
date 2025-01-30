@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
+import 'package:meetup_talk_25_01_30/text_input_examples/example_highlights.dart';
 import 'package:meetup_talk_25_01_30/text_input_examples/text_editing_controller.dart';
 
 const _speakerNotes = '''
@@ -58,73 +59,44 @@ class TextDisplayEditSlide extends FlutterDeckSlideWidget {
   Widget build(BuildContext context) {
     return FlutterDeckSlideStepsBuilder(
         builder: (context, step) => switch (step) {
-              1 => buildTextStyleExample(),
+              1 => CodeHighlighter.buildSplitSlide(
+                  code: _codeExample1,
+                  builder: buildTextStyleExample,
+                ),
               2 => buildRichTextStyling(),
               _ => buildRichTextStylingWithSelection(),
             });
   }
 
-  Widget buildTextStyleExample() {
-    return FlutterDeckSlide.split(
-      // TODO(jillme): adjust theme colors
-      leftBuilder: (context) => const FlutterDeckCodeHighlight(
-        code: '''Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'Hello',
-              style: textTheme.bodyLarge,
-            ),
-            Text(
-              'bold',
-              style: textTheme
-                  .bodyLarge
-                  ?.copyWith(fontWeight: FontWeight.bold),
-            ),
-            Text(
-              'italic',
-              style: textTheme.bodyLarge?.copyWith(
-                    fontStyle: FontStyle.italic,
-                  ),
-            ),
-            Text(
-              'World',
-              style: textTheme.bodyLarge?.copyWith(
-                    decoration: TextDecoration.underline,
-                  ),
-            ),
-          ],
-        );''',
-      ),
-      rightBuilder: (context) => Center(
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'Hello ',
-              style: FlutterDeckTheme.of(context).textTheme.bodyLarge,
-            ),
-            Text(
-              'bold ',
-              style: FlutterDeckTheme.of(context)
-                  .textTheme
-                  .bodyLarge
-                  .copyWith(fontWeight: FontWeight.bold),
-            ),
-            Text(
-              'italic ',
-              style: FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
-                    fontStyle: FontStyle.italic,
-                  ),
-            ),
-            Text(
-              'World',
-              style: FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
-                    decoration: TextDecoration.underline,
-                  ),
-            ),
-          ],
-        ),
+  Widget buildTextStyleExample(BuildContext context) {
+    return Center(
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            'Hello ',
+            style: FlutterDeckTheme.of(context).textTheme.bodyLarge,
+          ),
+          Text(
+            'bold ',
+            style: FlutterDeckTheme.of(context)
+                .textTheme
+                .bodyLarge
+                .copyWith(fontWeight: FontWeight.bold),
+          ),
+          Text(
+            'italic ',
+            style: FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
+                  fontStyle: FontStyle.italic,
+                ),
+          ),
+          Text(
+            'World',
+            style: FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
+                  decoration: TextDecoration.underline,
+                ),
+          ),
+        ],
       ),
     );
   }
@@ -231,3 +203,35 @@ class TextDisplayEditSlide extends FlutterDeckSlideWidget {
     );
   }
 }
+
+const _codeExample1 = '''
+Row(
+  mainAxisSize: MainAxisSize.min,
+  children: [
+    Text(
+      'Hello ',
+      style: textTheme.bodyLarge,
+    ),
+    Text(
+      'bold ',
+      style: textTheme
+          .bodyLarge
+          .copyWith(fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'italic ',
+      style: textTheme.bodyLarge.copyWith(
+            fontStyle: FontStyle.italic,
+          ),
+    ),
+    Text(
+      'World',
+      style: textTheme.bodyLarge.copyWith(
+            decoration: TextDecoration.underline,
+          ),
+    ),
+  ],
+),
+''';
+const _codeExample2 = '';
+const _codeExample3 = '';
