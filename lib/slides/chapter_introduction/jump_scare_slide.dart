@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_deck/flutter_deck.dart';
 import 'package:meetup_talk_25_01_30/config/deck_theme.dart';
+import 'package:meetup_talk_25_01_30/text_input_examples/text_input_examples.dart';
 
 const _speakerNotes = '''
 This is one of several files to showcase a simplistic editor implementation
@@ -40,19 +41,8 @@ class JumpScareSlide extends FlutterDeckSlideWidget {
   }
 
   Widget buildJumpScareSlide(BuildContext context) {
-    final theme = FlutterDeckTheme.of(context);
     return FlutterDeckSlide.blank(
-      builder: (context) => FlutterDeckCodeHighlightTheme(
-        data: createCodeHighlightTheme(theme),
-        // TODO(jillthebean): add linenumbers
-        // or make it scrolling on its own
-        child: const SingleChildScrollView(
-          child: FlutterDeckCodeHighlight(
-            fileName: _exampleFile,
-            code: _code,
-          ),
-        ),
-      ),
+      builder: (context) => CodeHighlighter.highlight(_code),
     );
   }
 }
