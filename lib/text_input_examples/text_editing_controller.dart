@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_deck/flutter_deck.dart';
 
 class CustomTextInput extends StatefulWidget {
-  const CustomTextInput({super.key});
+  const CustomTextInput({
+    super.key,
+    this.initialText = 'Hello bold world!',
+  });
+
+  final String initialText;
 
   @override
   State<CustomTextInput> createState() => _CustomTextInputState();
@@ -12,7 +18,7 @@ class _CustomTextInputState extends State<CustomTextInput> {
   @override
   void initState() {
     super.initState();
-    controller = CustomTextEditingController(text: 'Hello bold world!');
+    controller = CustomTextEditingController(text: widget.initialText);
   }
 
   @override
@@ -25,6 +31,7 @@ class _CustomTextInputState extends State<CustomTextInput> {
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      style: FlutterDeckTheme.of(context).textTheme.header,
     );
   }
 }

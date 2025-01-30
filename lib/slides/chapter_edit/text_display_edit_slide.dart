@@ -50,7 +50,7 @@ class TextDisplayEditSlide extends FlutterDeckSlideWidget {
           configuration: const FlutterDeckSlideConfiguration(
             route: '/text-display-edit',
             title: 'Display rich text',
-            steps: 3,
+            steps: 5,
             speakerNotes: _speakerNotes,
           ),
         );
@@ -61,150 +61,108 @@ class TextDisplayEditSlide extends FlutterDeckSlideWidget {
         builder: (context, step) => switch (step) {
               1 => CodeHighlighter.buildSplitSlide(
                   code: _codeExample1,
-                  builder: buildTextStyleExample,
+                  builder: buildSimpleStyledText,
                 ),
-              2 => buildRichTextStyling(),
-              _ => buildRichTextStylingWithSelection(),
+              2 => CodeHighlighter.buildSplitSlide(
+                  code: _codeExample2,
+                  builder: buildRowOfTextStyleExample,
+                ),
+              3 => CodeHighlighter.buildSplitSlide(
+                  code: _codeExample3,
+                  builder: buildRichTextStyling,
+                ),
+              4 => CodeHighlighter.buildSplitSlide(
+                  code: _codeExample4,
+                  builder: buildControllerInsights,
+                ),
+              _ => CodeHighlighter.buildSplitSlide(
+                  code: _codeExample5,
+                  builder: buildTextControllerExample,
+                ),
             });
   }
 
-  Widget buildTextStyleExample(BuildContext context) {
+  Widget buildSimpleStyledText(BuildContext context) {
+    final textTheme = FlutterDeckTheme.of(context).textTheme;
+    return Center(
+      child: Text(
+        'Hello bold world!',
+        style: textTheme.bodyLarge.copyWith(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
+  Widget buildRowOfTextStyleExample(BuildContext context) {
+    final textTheme = FlutterDeckTheme.of(context).textTheme;
     return Center(
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
             'Hello ',
-            style: FlutterDeckTheme.of(context).textTheme.bodyLarge,
+            style: textTheme.bodyLarge,
           ),
           Text(
             'bold ',
-            style: FlutterDeckTheme.of(context)
-                .textTheme
-                .bodyLarge
-                .copyWith(fontWeight: FontWeight.bold),
+            style: textTheme.bodyLarge.copyWith(fontWeight: FontWeight.bold),
           ),
           Text(
-            'italic ',
-            style: FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
-                  fontStyle: FontStyle.italic,
-                ),
-          ),
-          Text(
-            'World',
-            style: FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
-                  decoration: TextDecoration.underline,
-                ),
+            'World!',
+            style: textTheme.bodyLarge,
           ),
         ],
       ),
     );
   }
 
-  Widget buildRichTextStyling() {
-    return FlutterDeckSlide.split(
-      // TODO(jillme): adjust theme colors
-      leftBuilder: (context) => const FlutterDeckCodeHighlight(
-        code: '''Text.rich(
+  Widget buildRichTextStyling(BuildContext context) {
+    final textTheme = FlutterDeckTheme.of(context).textTheme;
+    return Center(
+      child: Text.rich(
         TextSpan(
           text: 'Hello ',
           style: textTheme.bodyLarge,
           children: <TextSpan>[
             TextSpan(
               text: 'bold ',
-              style: textTheme
-                  .bodyLarge
-                  ?.copyWith(fontWeight: FontWeight.bold),
+              style: textTheme.bodyLarge.copyWith(fontWeight: FontWeight.bold),
             ),
-            TextSpan(
-              text: 'italic ',
-              style: textTheme.bodyLarge?.copyWith(
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-            TextSpan(
-              text: 'World',
-              style: textTheme.bodyLarge?.copyWith(
-                decoration: TextDecoration.underline,
-              ),
+            const TextSpan(
+              text: 'World!',
             ),
           ],
-        ),
-      );''',
-      ),
-      rightBuilder: (context) => Center(
-        child: Text.rich(
-          TextSpan(
-            text: 'Hello ',
-            style: FlutterDeckTheme.of(context).textTheme.bodyLarge,
-            children: <TextSpan>[
-              TextSpan(
-                text: 'bold ',
-                style: FlutterDeckTheme.of(context)
-                    .textTheme
-                    .bodyLarge
-                    .copyWith(fontWeight: FontWeight.bold),
-              ),
-              TextSpan(
-                text: 'italic ',
-                style:
-                    FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
-                          fontStyle: FontStyle.italic,
-                        ),
-              ),
-              TextSpan(
-                text: 'World',
-                style:
-                    FlutterDeckTheme.of(context).textTheme.bodyLarge.copyWith(
-                          decoration: TextDecoration.underline,
-                        ),
-              ),
-            ],
-          ),
         ),
       ),
     );
   }
 
-  Widget buildRichTextStylingWithSelection() {
-    return FlutterDeckSlide.split(
-      // TODO(jillme): adjust theme colors
-      leftBuilder: (context) => const FlutterDeckCodeHighlight(
-        code: '''SelectionArea(
-            child: Text.rich(
-              TextSpan(
-                text: 'Hello ',
-                style: textTheme.bodyLarge,
-                children: <TextSpan>[
-                  TextSpan(
-                    text: 'bold ',
-                    style: textTheme
-                        .bodyLarge
-                        ?.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  TextSpan(
-                    text: 'italic ',
-                    style: textTheme.bodyLarge?.copyWith(
-                          fontStyle: FontStyle.italic,
-                        ),
-                  ),
-                  TextSpan(
-                    text: 'World',
-                    style: textTheme.bodyLarge?.copyWith(
-                          decoration: TextDecoration.underline,
-                        ),
-                  ),
-                ],
-              ),
-            ),
-          );''',
+  Widget buildControllerInsights(BuildContext context) {
+    final textTheme = FlutterDeckTheme.of(context).textTheme;
+    return Center(
+      child: Text(
+        'Returns a TextSpan?!',
+        style: textTheme.header,
       ),
-      rightBuilder: (context) => const Center(child: CustomTextInput()),
     );
+  }
+
+  Widget buildTextControllerExample(BuildContext context) {
+    return const Center(child: CustomTextInput());
   }
 }
 
 const _codeExample1 = '''
+Text(
+  'Hello bold world!',
+  style: textTheme.bodyLarge.copyWith(
+    fontWeight: FontWeight.bold,
+  ),
+);
+''';
+
+const _codeExample2 = '''
 Row(
   mainAxisSize: MainAxisSize.min,
   children: [
@@ -214,24 +172,63 @@ Row(
     ),
     Text(
       'bold ',
-      style: textTheme
+      style:textTheme
           .bodyLarge
           .copyWith(fontWeight: FontWeight.bold),
     ),
     Text(
-      'italic ',
-      style: textTheme.bodyLarge.copyWith(
-            fontStyle: FontStyle.italic,
-          ),
-    ),
-    Text(
-      'World',
-      style: textTheme.bodyLarge.copyWith(
-            decoration: TextDecoration.underline,
-          ),
+      'World!',
+      style: textTheme.bodyLarge,
     ),
   ],
-),
+);
 ''';
-const _codeExample2 = '';
-const _codeExample3 = '';
+const _codeExample3 = '''
+Text.rich(
+  TextSpan(
+    text: 'Hello ',
+    style: textTheme.bodyLarge,
+    children: <TextSpan>[
+      TextSpan(
+        text: 'bold ',
+        style: textTheme.bodyLarge.copyWith(fontWeight: FontWeight.bold),
+      ),
+      const TextSpan(
+        text: 'World!',
+      ),
+    ],
+  ),
+);
+''';
+const _codeExample4 = '''
+/// Builds [TextSpan] from current editing value.
+///
+/// By default makes text in composing range appear as underlined. Descendants
+/// can override this method to customize appearance of text.
+TextSpan buildTextSpan({required BuildContext context, TextStyle? style , required bool withComposing}) {...}
+''';
+const _codeExample5 = '''
+class CustomTextEditingController extends TextEditingController {
+  CustomTextEditingController({super.text});
+  @override
+  TextSpan buildTextSpan(
+      {required BuildContext context,
+      TextStyle? style,
+      required bool withComposing}) {
+    final text = value.text;
+    final spans = <InlineSpan>[];
+    bool bold = false;
+    var currentText = text.characters;
+    while (currentText.isNotEmpty) {
+      final part = currentText.take(5);
+      currentText = currentText.skip(5);
+      spans.add(TextSpan(
+          text: part.string,
+          style: bold ? style?.copyWith(fontWeight: FontWeight.bold) : style));
+
+      bold = !bold;
+    }
+    return TextSpan(children: spans);
+  }
+}
+''';
