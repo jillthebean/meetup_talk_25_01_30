@@ -15,3 +15,7 @@ const pangrams = [
   "Jackdaws love my big sphinx of quartz.",
   "Pack my box with five dozen liquor jugs.",
 ];
+
+String getFillerText() {
+  return pangrams[1];
+}
