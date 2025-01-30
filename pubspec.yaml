@@ -44,7 +44,11 @@ dependencies:
   go_router: ^14.7.1
   flutter_deck_client: ^0.1.2
   flutter_quill: ^10.8.2
-  super_editor: ^0.2.7
+
+  super_editor:
+    git:
+      url: https://github.com/superlistapp/super_editor.git
+      path: super_editor
 
 dev_dependencies:
   flutter_test:
