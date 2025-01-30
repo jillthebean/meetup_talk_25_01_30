@@ -10,8 +10,8 @@ import 'package:meetup_talk_25_01_30/text_input_examples/text_input_examples.dar
 typedef ContextMenuBuilder = Widget Function(
     BuildContext context, EditableTextState editableTextState);
 
-class ShortcutExample extends StatefulWidget {
-  const ShortcutExample({
+class FullExample extends StatefulWidget {
+  const FullExample({
     super.key,
     this.contextMenuBuilder,
     this.includeToolbar = false,
@@ -24,10 +24,10 @@ class ShortcutExample extends StatefulWidget {
   final String initialText;
 
   @override
-  State<ShortcutExample> createState() => _ShortcutExampleState();
+  State<FullExample> createState() => _FullExampleState();
 }
 
-class _ShortcutExampleState extends State<ShortcutExample> {
+class _FullExampleState extends State<FullExample> {
   late final TextEditingController _controller;
   late final Map<Type, Action<Intent>> actions;
 

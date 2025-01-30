@@ -28,7 +28,6 @@ GitHub Mobile Markdown editor - private screenshot
 final _images = [
   Assets.mobile.t9,
   Assets.mobile.swipe,
-  // TODO(jillthebean): replace with formatted text input
   Assets.mobile.threemaFormatting,
   Assets.mobile.githubMobile,
 ];

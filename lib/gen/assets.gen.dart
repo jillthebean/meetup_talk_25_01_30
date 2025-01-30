@@ -58,6 +58,21 @@ class $AssetsExamplesGen {
       ];
 }
 
+class $AssetsFallbackGen {
+  const $AssetsFallbackGen();
+
+  /// File path: assets/fallback/context_menu_custom.png
+  AssetGenImage get contextMenuCustom =>
+      const AssetGenImage('assets/fallback/context_menu_custom.png');
+
+  /// File path: assets/fallback/context_menu_default.png
+  AssetGenImage get contextMenuDefault =>
+      const AssetGenImage('assets/fallback/context_menu_default.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [contextMenuCustom, contextMenuDefault];
+}
+
 class $AssetsMobileGen {
   const $AssetsMobileGen();
 
@@ -84,6 +99,7 @@ class Assets {
   Assets._();
 
   static const $AssetsExamplesGen examples = $AssetsExamplesGen();
+  static const $AssetsFallbackGen fallback = $AssetsFallbackGen();
   static const AssetGenImage me = AssetGenImage('assets/me.png');
   static const $AssetsMobileGen mobile = $AssetsMobileGen();
 

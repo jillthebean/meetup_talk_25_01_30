@@ -8,13 +8,13 @@ const _speakerNotes = '''
 Let's put it all together now!
 ''';
 
-class ShortcutFinishSlide extends FlutterDeckSlideWidget {
-  ShortcutFinishSlide({
+class ToolbarSlide extends FlutterDeckSlideWidget {
+  ToolbarSlide({
     super.key,
   }) : super(
           configuration: FlutterDeckSlideConfiguration(
-              route: '/shortcut-finish',
-              title: 'Finished Shortcuts',
+              route: '/toolbar',
+              title: 'Toolbar',
               speakerNotes: _speakerNotes,
               steps: _allExamples.length),
         );

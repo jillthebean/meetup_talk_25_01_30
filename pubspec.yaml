@@ -78,6 +78,7 @@ flutter:
     - assets/me.png
     - assets/examples/
     - assets/mobile/
+    - assets/fallback/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
